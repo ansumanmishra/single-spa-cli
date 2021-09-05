@@ -18,15 +18,40 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getPrompts = void 0;
 const inquirer = __importStar(require("inquirer"));
+const chalk_1 = __importDefault(require("chalk"));
+const questions = [
+    {
+        name: 'appName',
+        type: 'input',
+        message: 'Name of your Micro frontend',
+        validate: (input) => {
+            if (!input) {
+                console.log(chalk_1.default.red('Name should not be blank'));
+                return;
+            }
+            return true;
+        }
+    },
+    {
+        name: 'appUrl',
+        type: 'input',
+        message: 'URL of your Micro frontend',
+        validate: (input) => {
+            if (!input) {
+                console.log(chalk_1.default.red('URL should not be blank'));
+                return;
+            }
+            return true;
+        }
+    }
+];
 async function getPrompts() {
-    const questions = await inquirer.prompt([{
-            name: 'App Name',
-            type: 'input',
-            message: 'Name of your Micro frontend'
-        }]);
-    return questions;
+    return await inquirer.prompt(questions);
 }
 exports.getPrompts = getPrompts;

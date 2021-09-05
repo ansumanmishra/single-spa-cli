@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "nav": "http://localhost:4200/main.js",
+    "home": "http://localhost:4300/main.js"
+  }
+}
