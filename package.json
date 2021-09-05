@@ -1,7 +1,7 @@
 {
   "name": "single-spa-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "It provides a CLI to add a new Micro frontend to the Single SPA root config",
   "main": "./dist/index.js",
   "scripts": {
     "start": "node ./dist/index.js",
@@ -11,8 +11,12 @@
   "bin": {
     "ss-gen": "./dist/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ansumanmishra/single-spa-cli"
+  },
+  "keywords": ["Node js", "CLI", "Single spa"],
+  "author": "Ansuman Mishra",
   "license": "ISC",
   "dependencies": {
     "@types/inquirer": "^7.3.3",
